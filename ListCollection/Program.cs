@@ -8,19 +8,20 @@ namespace ListCollection
     {
         static void Main(string[] args)
         {
-            List<int> myList = new List<int>(10) { 10, 20, 30 };
-
-            myList.Add(40);
+            List<int> myList = new List<int> { 10, 20, 30 };
+            List<int> newList = new List<int> { 40, 50, 60 };
+            myList.AddRange(newList);
             foreach (int i in myList)
             {
                 Console.WriteLine(i);
             }
-            Console.WriteLine("-----------");
             Console.WriteLine("capacity:" + myList.Capacity);
             Console.WriteLine("count:" + myList.Count);
+            Console.WriteLine("-----------");
+
             //Console.WriteLine(myList[4]);
 
-
+            /*
             List<int> otherList = new List<int>() { 50, 60, 70 };
             myList.AddRange(otherList);
 
@@ -38,6 +39,18 @@ namespace ListCollection
             {
                 Console.WriteLine(myList[i]);
             }
+            */
+            myList.Insert(1, 40);
+            myList.Insert(6, 40);
+
+            foreach (int i in myList)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("capacity:" + myList.Capacity);
+            Console.WriteLine("count:" + myList.Count);
+            Console.WriteLine("-----------");
+
             //int ind = 9;
             //if (ind < myList.Count)
             //{
@@ -48,6 +61,7 @@ namespace ListCollection
             //{
             //    Console.WriteLine("Can not be removed");
             //}
+            /*
             myList.RemoveRange(1, 3);
             Console.WriteLine("---------");
             for (int i = 0; i < myList.Count; i++)
@@ -60,9 +74,21 @@ namespace ListCollection
             {
                 Console.WriteLine(myList[i]);
             }
+            */
+            /*
             myList.Clear();
             Console.WriteLine("--------");
             Console.WriteLine("Count: " + myList.Count);
+            */
+
+            int n = myList.IndexOf(40);
+            int n2 = myList.IndexOf(40, n + 1);
+            Console.WriteLine("Next Index: " + n2);
+            int n3 = myList.IndexOf(40, n2 + 1);
+            Console.WriteLine("Next Index: " + n3);
+
+
+
 
         }
     }
