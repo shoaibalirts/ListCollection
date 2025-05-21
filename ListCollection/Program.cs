@@ -87,6 +87,17 @@ namespace ListCollection
             int n3 = myList.IndexOf(40, n2 + 1);
             Console.WriteLine("Next Index: " + n3);
 
+            List<int> preSortedList = new List<int> { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+            foreach (int i in preSortedList)
+            {
+                Console.WriteLine(i);
+            }
+            // Binary search is faster but it requires pre-sorted list 
+            // Result is same for both linear and binary search
+            int x = preSortedList.BinarySearch(80);
+            Console.WriteLine("Item is found at : " + (x + 1) + "th position");
+
+
 
 
 
