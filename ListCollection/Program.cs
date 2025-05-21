@@ -97,7 +97,9 @@ namespace ListCollection
             int x = preSortedList.BinarySearch(80);
             Console.WriteLine("Item is found at : " + (x + 1) + "th position");
 
-
+            // contains is better than IndexOf if we are not interested in index
+            bool b = preSortedList.Contains(100);// returns True or False
+            Console.WriteLine(b);
 
 
 
