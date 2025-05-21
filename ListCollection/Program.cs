@@ -100,9 +100,30 @@ namespace ListCollection
             // contains is better than IndexOf if we are not interested in index
             bool b = preSortedList.Contains(100);// returns True or False
             Console.WriteLine(b);
+            Console.WriteLine("--------------");
 
-
-
+            preSortedList.Reverse();
+            foreach (int i in preSortedList)
+            {
+                Console.WriteLine(i);
+            }
+            preSortedList.Sort();
+            Console.WriteLine("--------------");
+            foreach (int i in preSortedList)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("ForEach..........");
+            preSortedList.ForEach(item => { Console.WriteLine(item); });
+            bool check = preSortedList.Exists(item => item > 100);
+            Console.WriteLine(check);
+            Console.WriteLine("FindAll...................");
+            List<int> FoundNewList = preSortedList.FindAll(item => item > 30);
+            foreach (int i in FoundNewList)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("FindAll: " + FoundNewList.Count);
         }
     }
 }
