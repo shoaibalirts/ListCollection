@@ -50,17 +50,18 @@ namespace ListCollection
             Console.WriteLine("capacity:" + myList.Capacity);
             Console.WriteLine("count:" + myList.Count);
             Console.WriteLine("-----------");
+            /*
+            int ind = 9;
+            if (ind < myList.Count)
+            {
+                myList.RemoveAt(ind);
 
-            //int ind = 9;
-            //if (ind < myList.Count)
-            //{
-            //    myList.RemoveAt(ind);
-
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Can not be removed");
-            //}
+            }
+            else
+            {
+                Console.WriteLine("Can not be removed");
+            }
+            */
             /*
             myList.RemoveRange(1, 3);
             Console.WriteLine("---------");
@@ -124,6 +125,33 @@ namespace ListCollection
                 Console.WriteLine(i);
             }
             Console.WriteLine("FindAll: " + FoundNewList.Count);
+
+            Console.WriteLine("ConvertAll method............");
+            List<int> intCollection = new List<int>() { 1, 8, 2, 7 };
+            List<string> strCollection = intCollection.ConvertAll<string>((item) =>
+            {
+                if (item == 1)
+                {
+                    return "One";
+                }
+                else if (item == 2)
+                {
+                    return "Two";
+                }
+                else if (item == 7)
+                {
+                    return "Seven";
+                }
+                else if (item == 8)
+                {
+                    return "Eight";
+                }
+                return Convert.ToString(item);
+            });
+            foreach (string i in strCollection)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
