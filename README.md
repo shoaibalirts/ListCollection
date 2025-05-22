@@ -1,1 +1,1 @@
-<h1> Demonstration og List Collection through examples</h1>
+<h1> List Collection demonstration through examples</h1>
